@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="images/JeffTheKiller.jpg" />
+    <title>JeffTheKiller</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="full black center-content" id="background">
+      <img src="images/Bunkerdoor2.png" class="" id="backgroundImg" />
+    </div>
+    <div class="DisplayBody" id="">
+      <div class="leftarrow center-content" id="leftmodal">
+        <img
+          src="images/leftarrow.png"
+          class="button img2"
+          onclick="leftButton()"
+        />
+      </div>
+      <div class="rightarrow center-content" id="rightmodal">
+        <img
+          src="images/rightarrow.png"
+          class="button img2"
+          onclick="rightButton()"
+        />
+      </div>
+      <div class="downarrow center-content" id="downmodal">
+        <img
+          src="images/downarrow.png"
+          class="button img3"
+          onclick="downButton()"
+        />
+      </div>
+      <div class="bunkerdoor" id="doormodal" onclick="openDialogue()"></div>
+      <div class="BloodArrow1" id="bloodArrow">
+        <img
+          src="images/BloodArrow.png"
+          class="img3 rotation"
+          onclick="forestAdvance()"
+          id="bloodArrowimg"
+          onmouseover="bloodArrowHover()"
+          onmouseleave="bloodArrowLeave()"
+        />
+      </div>
+      <div class="Blood_S shovelCursor" id="bloodS" onclick="letterClick(this)">
+        <img src="images/Blood_S.png" class="img3" id="bloodSimg" />
+      </div>
+      <div class="Blood_L" id="bloodL" onclick="letterClick(this)">
+        <img src="images/Blood_L.png" class="img3" id="bloodLimg" />
+      </div>
+      <div class="Blood_E" id="bloodE" onclick="letterClick(this)">
+        <img src="images/Blood_E.png" class="img3" id="bloodEimg" />
+      </div>
+      <div class="Blood_EB" id="bloodEB" onclick="letterClick(this)">
+        <img src="images/Blood_E.png" class="img3" id="bloodEBimg" />
+      </div>
+      <div class="Blood_P" id="bloodP" onclick="letterClick(this)">
+        <img src="images/Blood_P.png" class="img3" id="bloodPimg" />
+      </div>
+
+      <div class="none" id="allPages">
+        <div class="note" id="page1" onclick="showModal1()">
+          <img src="images/snakePage.png" class="img" id="noteimg1" />
+        </div>
+        <div class="note2" id="page2" onclick="showModal2()">
+          <img src="images/elephantPage2.png" class="img" id="noteimg2" />
+        </div>
+        <div class="note3" id="page3" onclick="showModal3()">
+          <img src="images/pigPage.png" class="img" id="noteimg3" />
+        </div>
+        <div class="note4" id="page4" onclick="showModal4()">
+          <img src="images/lionPage.png" class="img" id="noteimg4" />
+        </div>
+      </div>
+
+      <div class="inventory" id="inventoryBox">
+        <img
+          src="images/DialogueBox.png"
+          class="img inventory"
+          id="inventoryBoxImg"
+        />
+      </div>
+      <div class="inventory" id="inventory">
+        <img src="" class="img3" id="inventoryImg" />
+        <div class="letterInventory" id="bloodS2"">>
+          <img src="images/Blood_S.png" class="img3" id="bloodSimg2" />
+        </div>
+        <div class="letterInventory" id="bloodL2">
+          <img src="images/Blood_L.png" class="img3" id="bloodLimg2" />
+        </div>
+        <div class="letterInventory" id="bloodE2">
+          <img src="images/Blood_E.png" class="img3" id="bloodEimg2" />
+        </div>
+        <div class="letterInventory" id="bloodEB2">
+          <img src="images/Blood_E.png" class="img3" id="bloodEBimg2" />
+        </div>
+        <div class="letterInventory" id="bloodP2">
+          <img src="images/Blood_P.png" class="img3" id="bloodPimg2" />
+        </div>
+      </div>
+      <input type="" class="textInput h1" id="textModal" />
+      <span class="closeInput button" onclick="hideModal2()" id="closeText">&times;</span>
+    </div>
+    <div class="dialogue" id="dialogueModal">
+      <div class="dialogueFace">
+        <img
+          id="dialogueImg"
+          src="images/UnknownMan2.png"
+          class="dialogueImg"
+        />
+      </div>
+      <div class="dialogueText">
+        <img src="images/DialogueBox.png" class="dialogueImg" />
+        <h1 id="dialogueText">hi</h1>
+      </div>
+    </div>
+    <div class="modalNote center-content" id="noteModal1" onclick="hideModal1()">
+      <img src="images/snakePage.png" />
+    </div>
+    <div class="modalNote center-content" id="noteModal2" onclick="hideModal1()">
+      <img src="images/elephantPage2.png" />
+    </div>
+    <div class="modalNote center-content" id="noteModal3" onclick="hideModal1()">
+      <img src="images/pigPage.png" />
+    </div>
+    <div class="modalNote center-content" id="noteModal4" onclick="hideModal1()">
+      <img src="images/lionPage.png" />
+    </div>
+
+    <div class="inventory" id="inventoryBox">
+      <img
+        src="images/DialogueBox.png"
+        class="img inventory"
+        id="inventoryBoxImg"
+      />
+    </div>
+    <div class="screamerModal img" id="jeffModal"></div>
+    <!--<div id="timer">0</div>-->
+    <audio
+      loop
+      src="sounds/WinterWinds.mp3"
+      type="audio/mp3"
+      id="ambience"
+    ></audio>
+    <audio
+      loop
+      src="sounds/LBPJeffSong.mp3"
+      type="audio/mp3"
+      id="chaseMusic"
+    ></audio>
+    <audio src="sounds/shutter4.mp3" type="audio/mp3" id="bunkerSound"></audio>
+    <audio
+      src="sounds/itemGet.mp3"
+      type="audio/mp3"
+      id="letterGetSound"
+    ></audio>
+    <audio
+      src="sounds/shovelingSnow.wav"
+      type="audio/mp3"
+      id="shovelingSnow"
+    ></audio>
+    <audio
+      src="sounds/pageSound2.mp3"
+      type="audio/mp3"
+      id="pageInteract"
+    ></audio>
+    <audio
+      src="sounds/draw_default.wav"
+      type="audio/mp3"
+      id="moveSound"
+    ></audio>
+    <audio
+    src="sounds/caughtJeff.mp3"
+    type="audio/mp3"
+    id="jeffCatch"
+  ></audio>
+  <audio
+  src="sounds/wrongInput.mp3"
+  type="audio/mp3"
+  id="wrongInput"
+></audio>
+  <audio
+  src="sounds/JeffScreamer.mp3"
+  type="audio/mp3"
+  id="jeffScare"
+></audio>
+    <audio
+      loop
+      src="sounds/breathing.mp3"
+      type="audio/mp3"
+      id="breathingSound"
+    ></audio>
+    <audio
+      loop
+      src="sounds/footsteps3.mp3"
+      type="audio/mp3"
+      id="footstepSound"
+    ></audio>
+  </body>
+  <script src="script.js"></script>
+</html>

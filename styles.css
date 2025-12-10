@@ -1,0 +1,438 @@
+body {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  user-select: none;
+}
+.full {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.area1 {
+  background-image: url("images/Bunkerdoor.png");
+}
+.area2 {
+  background-image: url();
+}
+.column {
+  display: flex;
+  height: 100%;
+  width: 33.33%;
+}
+.box {
+  height: 100%;
+  width: 50%;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.img2 {
+  max-height: 100%;
+  max-width: 80%;
+}
+.img3 {
+  max-height: 90%;
+  max-width: 100%;
+}
+.no-cursor {
+  cursor: default;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.center-contentright {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.center-contentleft {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.contain-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.opaque {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.rotation {
+  transform: rotate(-92deg);
+}
+
+.light-grey {
+  background-color: #a9a9a9;
+}
+.dark-grey {
+  background-color: #707070;
+}
+.black {
+  background-color: black;
+}
+.green {
+  background-color: green;
+}
+
+.button:hover {
+  cursor: pointer;
+  max-height: 95%;
+  max-width: 85%;
+}
+
+.button:active {
+  max-height: 90%;
+  max-width: 80%;
+  opacity: 1;
+  opacity: 0.85;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.95;
+}
+.leftarrow {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 10%;
+  height: 100%;
+  opacity: 0.5;
+}
+.downarrow {
+  display: flex;
+  position: fixed;
+  bottom: 7%;
+  left: 30%;
+  z-index: 1;
+  width: 40%;
+  height: 19%;
+  opacity: 0.5;
+}
+.rightarrow {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 10%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.DisplayBody {
+  position: fixed;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 16/9;
+}
+
+.bunkerdoor {
+  display: flex;
+  position: relative;
+  top: 34%;
+  left: 43%;
+  z-index: 1;
+  opacity: 0.1;
+  height: 37%;
+  width: 14%;
+}
+
+.bunkerdoor:hover {
+  position: relative;
+  top: 37%;
+  left: 44.5%;
+  z-index: 1;
+  opacity: 0.02;
+  height: 31%;
+  width: 10.8%;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.bunkerdoor:active {
+  position: relative;
+  top: 37%;
+  left: 44.5%;
+  z-index: 1;
+  opacity: 0.02;
+  height: 31%;
+  width: 10.8%;
+  background-color: rgb(214, 0, 0);
+}
+
+.dialogue {
+  position: fixed;
+  display: none;
+  width: 40%;
+  height: 20%;
+  top: 65%;
+  left: 30%;
+  z-index: 3;
+}
+
+.dialogueFace {
+  position: relative;
+  width: 25%;
+  height: 100%;
+}
+
+.dialogueText {
+  position: relative;
+  width: 75%;
+  height: 100%;
+}
+
+.dialogueImg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.dialogueText h1 {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  font-family: Arial, system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  color: white;
+  font-size: 2em;
+  margin: 0;
+}
+
+.BloodArrow1 {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 60%;
+  left: 44%;
+  z-index: 1;
+  opacity: 1;
+  height: 15%;
+  width: 12%;
+  opacity: 1;
+}
+
+.BloodArrow1:active {
+  display: flex;
+  position: absolute;
+  top: 61%;
+  left: 45%;
+  z-index: 1;
+  opacity: 1;
+  height: 13%;
+  width: 10%;
+  opacity: 0.6;
+}
+
+.Blood_S {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 49%;
+  left: 46%;
+  z-index: 1;
+  opacity: 1;
+  height: 12%;
+  width: 6%;
+  opacity: 0;
+}
+.Blood_L {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 9%;
+  left: 16%;
+  z-index: 1;
+  opacity: 1;
+  height: 15%;
+  width: 10%;
+  opacity: 0;
+}
+
+.Blood_EB {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 30%;
+  right: 8%;
+  z-index: 1;
+  opacity: 1;
+  height: 12%;
+  width: 6%;
+  opacity: 0;
+}
+
+.Blood_E {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 17%;
+  left: 39%;
+  z-index: 1;
+  opacity: 1;
+  height: 12%;
+  width: 6%;
+  opacity: 0;
+}
+
+.Blood_P {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 18%;
+  right: 35%;
+  z-index: 1;
+  opacity: 1;
+  height: 12%;
+  width: 6%;
+  opacity: 0;
+}
+
+.inventory {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  z-index: 2;
+  opacity: 1;
+  height: 12%;
+  width: 30%;
+}
+
+.letterInventory {
+  height: 100%;
+  width: 20%;
+  display: none;
+}
+
+.textInput {
+  display: none;
+  position: absolute;
+  top: 33%;
+  left: 25%;
+  z-index: 3;
+  height: 33%;
+  width: 50%;
+  background-color: rgb(0, 0, 0);
+}
+
+.h1 {
+  color: red;
+  font-size: 200px;
+  font-family: Arial, Sans-serif;
+  text-align: center;
+}
+
+.modalNote {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+/* The Close Button */
+.closeInput {
+  display: none;
+  color: #2e2e2e;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  z-index: 3;
+  font-size: 160px;
+  font-weight: bold;
+}
+
+.note {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  top: 40%;
+  left: 52%;
+  z-index: 3;
+  height: 15%;
+  width: 6%;
+}
+
+.note2 {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  top: 42%;
+  left: 79.5%;
+  z-index: 3;
+  height: 5%;
+  width: 2%;
+}
+
+.note3 {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  top: 47%;
+  left: 38.5%;
+  z-index: 3;
+  height: 5%;
+  width: 2%;
+}
+
+.note4 {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  top: 41%;
+  left: 11%;
+  z-index: 3;
+  height: 5%;
+  width: 2%;
+}
+
+.none {
+  display: none;
+}
+
+.screamerModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/jeffTheKiller2.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%;
+}
