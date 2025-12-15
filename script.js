@@ -49,7 +49,7 @@ setInterval(() => {
     document.getElementById("jeffModal").style.display = "flex";
     document.getElementById("jeffScare").play();
     setTimeout(() => {
-      window.location.href = "https://t9kslt.csb.app/";
+      window.location.href = "https://jordojumbo.github.io/JeffTheKiller-EscapeRoom3/";
     }, 3000);
   }
   if (area == 3 && puzzlePart == 1) {
@@ -414,4 +414,5 @@ function displayInventory() {
     dialogue = 3;
   }
 }
+
 
