@@ -88,8 +88,6 @@ img {
 
 .button:hover {
   cursor: pointer;
-  max-height: 95%;
-  max-width: 85%;
 }
 
 .button:active {
@@ -251,7 +249,7 @@ img {
   opacity: 1;
   height: 13%;
   width: 10%;
-  opacity: 0.6;
+  opacity: 0.1;
 }
 
 .Blood_S {
@@ -264,7 +262,7 @@ img {
   opacity: 1;
   height: 12%;
   width: 6%;
-  opacity: 0;
+  opacity: 0.1;
 }
 .Blood_L {
   display: none;
@@ -276,7 +274,7 @@ img {
   opacity: 1;
   height: 15%;
   width: 10%;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .Blood_EB {
@@ -289,7 +287,7 @@ img {
   opacity: 1;
   height: 12%;
   width: 6%;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .Blood_E {
@@ -302,7 +300,7 @@ img {
   opacity: 1;
   height: 12%;
   width: 6%;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .Blood_P {
@@ -315,7 +313,7 @@ img {
   opacity: 1;
   height: 12%;
   width: 6%;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .inventory {
@@ -423,6 +421,16 @@ img {
   display: none;
 }
 
+.timerModal {
+  color: #bc1818;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  z-index: 3;
+  font-size: 160px;
+  font-weight: bold;
+}
+
 .screamerModal {
   display: none;
   position: fixed;
@@ -436,3 +444,4 @@ img {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
 }
+
