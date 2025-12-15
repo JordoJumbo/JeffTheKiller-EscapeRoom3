@@ -11,37 +11,37 @@ var dialogueOpen = false;
 var canClick = true;
 var textEnd = false;
 var puzzlePart = 0;
-var seconds = 0;
+var seconds = 90;
 var secondsPause = false;
 var ambiencePlay = false;
 var textList = [
   "Play his game and I'll let you in.",
   "Explore the forest and dig up what he's left for you.",
-  "Don't let him get too close, listen carefully and remember to look behind you every now and then.",
+  "Don't let him get too close, listen for him and look behind you to scare him off.",
   "Each letter in the word corresponds to the first letter of an animal's name.",
   "What's the password?",
 ];
 
-//const timerEl = document.getElementById("timer");
+const timerEl = document.getElementById("timer");
 
 setInterval(() => {
+  timerEl.textContent = seconds;
   if (ambiencePlay == false) {
     document.getElementById("ambience").play();
     ambiencePlay = true;
   }
   if (secondsPause == false) {
     if (inSubarea == false) {
-      seconds++;
+      seconds--;
     } else {
-      seconds = seconds + 2;
+      seconds = seconds - 2;
     }
   }
-  //timerEl.textContent = seconds;
-  if (seconds <= 70 && seconds > 45) {
+  if (seconds >= 20 && seconds < 45) {
     document.getElementById("footstepSound").play();
-  } else if (seconds <= 90 && seconds > 70) {
+  } else if (seconds >= 1 && seconds < 20) {
     document.getElementById("breathingSound").play();
-  } else if (seconds > 90) {
+  } else if (seconds < 0) {
     document.getElementById("breathingSound").pause();
     document.getElementById("footstepSound").pause();
     document.getElementById("ambience").pause();
@@ -49,13 +49,13 @@ setInterval(() => {
     document.getElementById("jeffModal").style.display = "flex";
     document.getElementById("jeffScare").play();
     setTimeout(() => {
-      window.location.href = "https://jordojumbo.github.io/JeffTheKiller-EscapeRoom3/";
+      window.location.href = "https://t9kslt.csb.app/";
     }, 3000);
   }
   if (area == 3 && puzzlePart == 1) {
-    if (seconds <= 70 && seconds > 45) {
+    if (seconds >= 20 && seconds < 45) {
       bg.src = "images/SnowyForestBackJeff.png";
-    } else if (seconds > 70) {
+    } else if (seconds < 20) {
       bg.src = "images/SnowyForestBackJeff2.png";
     }
   }
@@ -93,21 +93,21 @@ function jeffMove() {
   document.getElementById("footstepSound").currentTime = 0;
   document.getElementById("breathingSound").pause();
   document.getElementById("breathingSound").currentTime = 0;
-  if (seconds <= 45) {
+  if (seconds >= 45) {
     bg.src = "images/SnowyForestBack.png";
-  } else if (seconds <= 70 && seconds > 45) {
+  } else if (seconds >= 20 && seconds < 45) {
     bg.src = "images/SnowyForestBackJeff.png";
     if (puzzlePart == 0) {
       canClick = false;
     }
-  } else if (seconds > 70) {
+  } else if (seconds < 20) {
     bg.src = "images/SnowyForestBackJeff2.png";
     if (puzzlePart == 0) {
       canClick = false;
     }
   }
   if (puzzlePart == 0) {
-    if (seconds > 45) {
+    if (seconds < 45) {
       document.getElementById("shovelingSnow").currentTime = 0;
       document.getElementById("jeffCatch").play();
       setTimeout(() => {
@@ -115,7 +115,7 @@ function jeffMove() {
         bg.src = "images/SnowyForestBack.png";
       }, 2000);
     }
-    seconds = 0;
+    seconds = 90;
     secondsPause = true;
   }
 }
@@ -166,6 +166,12 @@ function downButton() {
       document.getElementById("bloodL").style.display = "none";
       document.getElementById("bloodP").style.display = "none";
       inSubarea = false;
+      if (puzzlePart == 1) {
+        document.getElementById("timer").style.display = "flex";
+        secondsPause = false;
+        document.getElementById("ambience").pause();
+        document.getElementById("chaseMusic").play();
+      }
       if (subarea < 5) {
         document.getElementById("bloodArrow").style.display = "flex";
       }
@@ -292,7 +298,7 @@ textModal.addEventListener("keydown", function (event) {
       window.location.href =
         "https://austijn.github.io/slenderman-maze-room-4/";
     } else {
-      seconds = seconds + 20;
+      seconds = seconds - 10;
       document.getElementById("wrongInput").currentTime = 0;
       document.getElementById("wrongInput").play();
     }
@@ -338,6 +344,7 @@ function bloodArrowLeave() {
 }
 
 function forestAdvance() {
+  a = 0.1;
   if (subarea == 0) {
     bg.src = "images/SnowyForestGraveyard8.png";
     document.getElementById("bloodS").style.display = "flex";
@@ -362,11 +369,11 @@ function forestAdvance() {
   inSubarea = true;
 }
 
-var a = 0;
+var a = 0.1;
 
 function letterClick(elem) {
   if (a < 1) {
-    a = a + 0.05;
+    a = a + 0.1;
     elem.style.opacity = a;
     document.getElementById("shovelingSnow").play();
   } else {
@@ -379,8 +386,9 @@ function letterClick(elem) {
     subarea = subarea + 1;
     document.getElementById("downmodal").style.display = "flex";
     if (subarea == 5) {
+      secondsPause = true;
       puzzlePart = 1;
-      seconds = 0;
+      seconds = 90;
       document.getElementById("breathingSound").currentTime = 0;
       document.getElementById("footstepSound").currentTime = 0;
       document.getElementById("breathingSound").pause();
@@ -404,8 +412,6 @@ function displayInventory() {
   } else if (subarea == 4) {
     document.getElementById("bloodP2").style.display = "flex";
     dialogue = 3;
-    document.getElementById("ambience").pause();
-    document.getElementById("chaseMusic").play();
   }
 }
 
