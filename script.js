@@ -291,9 +291,8 @@ textModal.addEventListener("keydown", function (event) {
   // Check if the pressed key is Enter
   if (event.key == "Enter") {
     const value = textModal.value.trim().toLowerCase();
-    textModal.value = ""; // clear the input
-    canClick = true; // reset any flags
-    dialogueOpen = false; // reset dialogue state
+    textModal.value = "";
+    dialogueOpen = false;
     if (value == "56990") {
       window.location.href =
         "https://austijn.github.io/slenderman-maze-room-4/";
@@ -414,5 +413,6 @@ function displayInventory() {
     dialogue = 3;
   }
 }
+
 
 
